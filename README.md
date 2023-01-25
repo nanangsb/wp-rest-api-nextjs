@@ -1,1 +1,1 @@
-# docker-wordpress
+# wp-rest-api-nextjs
