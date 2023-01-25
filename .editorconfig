@@ -1,0 +1,10 @@
+root = true
+
+[*]
+indent_style = space
+
+[*.{ts,tsx}]
+indent_size = 2
+
+[*.php]
+indent_size = 4
