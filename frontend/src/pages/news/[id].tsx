@@ -12,7 +12,7 @@ type Params = ParsedUrlQuery & {
 }
 
 export const getStaticPaths = async () => {
-  const result = await fetch(`http://localhost:8000/wp-json/wp/v2/posts`)
+  const result = await fetch(`http://localhost:8000/wp-json/wp/v2/news`)
   const res = await result.json() as WPResponse[]
 
   const paths = res.map((x) => `/news/${x.id}`)
