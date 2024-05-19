@@ -12,7 +12,7 @@ type Params = ParsedUrlQuery & {
 }
 
 export const getStaticPaths = async () => {
-  const result = await fetch(`https://muslim.or.id/wp-json/wp/v2/categories`)
+  const result = await fetch(`https://muslim.or.id/wp-json/wp/v2/posts`)
   const res = await result.json() as WPResponse[]
 
   const paths = res.map((x) => `/news/${x.id}`)
@@ -33,7 +33,7 @@ export const getStaticProps = async (ctx: GetStaticPropsContext<Params>) => {
     }
   }
 
-  const result = await fetch(`http://localhost:8000/wp-json/wp/v2/news/${postId}`)
+  const result = await fetch(`https://muslim.or.id/wp-json/wp/v2/posts/${postId}`)
   const res = await result.json() as WPResponse
 
   return {
