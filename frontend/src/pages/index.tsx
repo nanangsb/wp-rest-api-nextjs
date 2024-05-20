@@ -8,7 +8,7 @@ import { WPResponse } from '@/types'
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 export const getStaticProps = async () => {
-  const result = await fetch('https://muslim.or.id/wp-json/wp/v2/posts')
+  const result = await fetch('./posts.json')
   const res = await result.json() as WPResponse[]
 
   return {
